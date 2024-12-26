@@ -64,3 +64,38 @@ serializer = SnippetSerializer(snippet)
 serializer.data
 # {'id': 2, 'title': '', 'code': 'print("hello, world")\n', 'linenos': False, 'language': 'python', 'style': 'friendly'}
 ```
+
+## Delete file and folder in Powershell
+
+```
+# Delete File
+Remove-Item ./db.sqlite3 -Force
+
+# Delete Folder
+Remove-Item .\my-app\ -Recurse -Force
+```
+
+# Create user
+
+```
+python manage.py createsuperuser --username=admin --email=ramses2099@gmail.com
+```
+
+## Install Extension Rest-Client
+
+Rest client
+
+## Create file with [name].http
+
+```
+## client.http
+
+GET http://localhost:8000/snippets/ HTTP/1.1
+
+```
+
+## For send resquest
+
+```
+ctrl+alt+r
+```

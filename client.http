@@ -1,0 +1,15 @@
+GET http://localhost:8000/snippets/ HTTP/1.1
+
+###
+
+POST http://localhost:8000/snippets/ HTTP/1.1
+Authorization: Basic admin:123456
+Content-type: application/json
+
+{
+    "id":1,
+    "title": "Sample Snippet",
+    "code": "print('Hello, World!')"
+}
+
+###
