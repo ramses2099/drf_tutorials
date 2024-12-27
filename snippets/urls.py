@@ -1,8 +1,13 @@
-from django.urls import path
+from django.urls import include, path
+from rest_framework.routers import DefaultRouter
 
 from snippets import views
 
+router = DefaultRouter()
+
+router.register(r'snippets', views.SnippetViewSet, basename='snippet')
+router.register(r'users', views.UserViewSet, basename='user')
+
 urlpatterns = [
-    path('', views.api_root),
-    path('snippets/<int:pk>/highlight/',views.SnippetHighlight.as_view())    
+    path('', include(router.urls))   
 ]

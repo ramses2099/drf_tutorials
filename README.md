@@ -99,3 +99,12 @@ GET http://localhost:8000/snippets/ HTTP/1.1
 ```
 ctrl+alt+r
 ```
+
+## Adding pagination add in the settings file project
+
+```
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
+```
