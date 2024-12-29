@@ -33,3 +33,20 @@ class Snippet(models.Model):
         self.highlighted = highlight(self.code, lexer, formatter)
         super().save(*args, **kwargs)
 
+class Album(models.Model):
+    album_id = models.BigAutoField(primary_key=True, null=False)
+    album_name = models.CharField(max_length=500)
+    artist_name = models.CharField(max_length=500)
+
+    class Meta:
+        fields = ['album_id', 'album_name','artist_name']
+
+class Track(models.Model):
+    track_id = models.BigAutoField(primary_key=True, null=False)
+    album_id = models.ForeignKey(Album, related_name="tracks", on_delete=models.CASCADE)
+    order = models.IntegerField()
+    title = models.CharField(max_length=500)
+    duration = models.IntegerField()
+
+    class Meta:
+        fields = ['track_id', 'album_id', 'order', 'title', 'duration']
